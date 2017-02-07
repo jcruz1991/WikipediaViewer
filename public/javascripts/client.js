@@ -16,11 +16,12 @@ var main = function() {
       dataType: 'json',
       success: function(data) {
         for(var i = 0; i < data[1].length; i++) {
+          // Variables
           var title = data[1][i];
           var description = data[2][i];
           var link = data[3][i];
-          console.log("Title: " + title + " Description: " + description + " Link: " + link);
-          $(".results").append("<p>" + title + "</p>" + "<p>" + description + "</p>" + "<p>" + link + "</p>");
+
+          $(".results").append("<div class=\"wiki-result\"><p class=\"wiki-title\"><a href=" + link + ">" + title + "</a></p> <p class=\"wiki-description\">" + description + "</p></div>");
         }
       },
       error: function(error) {
